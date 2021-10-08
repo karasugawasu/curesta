@@ -8,7 +8,7 @@ import PollContainer from 'mastodon/containers/poll_container';
 import Icon from 'mastodon/components/icon';
 import { autoPlayGif, show_reply_tree_button } from 'mastodon/initial_state';
 
-const MAX_HEIGHT = 642; // 20px * 32 (+ 2px padding at the top)
+const MAX_HEIGHT = 202; // 20px * 10 (+ 2px padding at the top)
 
 export default class StatusContent extends React.PureComponent {
 

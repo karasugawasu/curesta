@@ -1,3 +1,6 @@
 default: styles/application.scss
 contrast: styles/contrast.scss
 mastodon-light: styles/mastodon-light.scss
+cure-orange: styles/cure-orange.scss
+cure-lime : styles/cure-lime.scss
+juliamo-mastodon-light: styles/juliamo-mastodon-light.scss

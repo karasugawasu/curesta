@@ -1433,6 +1433,9 @@ en:
     contrast: Mastodon (High contrast)
     default: Mastodon (Dark)
     mastodon-light: Mastodon (Light)
+    cure-orange: Cure orange (Light) Juliamo
+    cure-lime: Cure lime (Light) Juliaomo
+    juliamo-mastodon-light: Mastodon (Light) Juliamo
   time:
     formats:
       default: "%b %d, %Y, %H:%M"

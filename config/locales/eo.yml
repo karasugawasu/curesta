@@ -1181,6 +1181,9 @@ eo:
     contrast: Mastodon (Forta kontrasto)
     default: Mastodon (Malluma)
     mastodon-light: Mastodon (Luma)
+    cure-orange: Cure oranĝo (Luma) Juliamo
+    cure-lime: Cure lime (Luma) Juliamo
+    juliamo-mastodon-light: Mastodon (Luma) Juliamo
   time:
     formats:
       default: "%Y-%m-%d %H:%M"

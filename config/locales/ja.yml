@@ -1352,6 +1352,9 @@ ja:
     contrast: Mastodon (ハイコントラスト)
     default: Mastodon (ダーク)
     mastodon-light: Mastodon (ライト)
+    cure-orange: キュアオレンジ (ライト) ユリアーモ
+    cure-lime: キュアライム (ライト) ユリアーモ
+    juliamo-mastodon-light: Mastodon (ライト) ユリアーモ
   time:
     formats:
       default: "%Y年%m月%d日 %H:%M"

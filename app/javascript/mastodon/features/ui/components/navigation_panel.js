@@ -12,6 +12,7 @@ import TrendsContainer from 'mastodon/features/getting_started/containers/trends
 
 const NavigationPanel = () => (
   <div className='navigation-panel'>
+    <NavLink className='column-link column-link--transparent' to='/timelines/tag/precure_fun' data-preview-title-id='column.precure' data-preview-icon='hashtag' ><Icon className='column-link__icon' id='hashtag' fixedWidth /><FormattedMessage id='tabs_bar.precure_timeline' defaultMessage='precure_fun' /></NavLink>
     <NavLink className='column-link column-link--transparent' to='/timelines/home' data-preview-title-id='column.home' data-preview-icon='home' ><Icon className='column-link__icon' id='home' fixedWidth /><FormattedMessage id='tabs_bar.home' defaultMessage='Home' /></NavLink>
     {enable_limited_timeline && <NavLink className='column-link column-link--transparent' to='/timelines/limited' data-preview-title-id='column.limited' data-preview-icon='lock' ><Icon className='column-link__icon' id='lock' fixedWidth /><FormattedMessage id='navigation_bar.limited_timeline' defaultMessage='Limited home' /></NavLink>}
     <NavLink className='column-link column-link--transparent' to='/notifications' data-preview-title-id='column.notifications' data-preview-icon='bell' ><NotificationsCounterIcon className='column-link__icon' /><FormattedMessage id='tabs_bar.notifications' defaultMessage='Notifications' /></NavLink>

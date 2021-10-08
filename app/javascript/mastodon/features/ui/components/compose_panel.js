@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import SearchContainer from 'mastodon/features/compose/containers/search_container';
 import ComposeFormContainer from 'mastodon/features/compose/containers/compose_form_container';
 import NavigationContainer from 'mastodon/features/compose/containers/navigation_container';
+import CureAnnouncementsContainer from 'mastodon/features/compose/containers/cure_announcements_container';
 import LinkFooter from './link_footer';
 import { changeComposing } from 'mastodon/actions/compose';
 
@@ -28,6 +29,7 @@ class ComposePanel extends React.PureComponent {
         <SearchContainer openInRoute />
         <NavigationContainer onClose={this.onBlur} />
         <ComposeFormContainer singleColumn />
+        <CureAnnouncementsContainer />
         <LinkFooter withHotkeys />
       </div>
     );

@@ -13,6 +13,7 @@ import spring from 'react-motion/lib/spring';
 import SearchResultsContainer from './containers/search_results_container';
 import { changeComposing } from '../../actions/compose';
 import { openModal } from 'mastodon/actions/modal';
+import CureAnnouncementsContainer from './containers/cure_announcements_container';
 import elephantUIPlane from '../../../images/elephant_ui_plane.svg';
 import { mascot, show_tab_bar_label, enable_limited_timeline } from '../../initial_state';
 import Icon from 'mastodon/components/icon';
@@ -163,6 +164,7 @@ class Compose extends React.PureComponent {
             <NavigationContainer onClose={this.onBlur} />
 
             <ComposeFormContainer />
+            <CureAnnouncementsContainer />
 
             <div className='drawer__inner__mastodon'>
               <img alt='' draggable='false' src={mascot || elephantUIPlane} />

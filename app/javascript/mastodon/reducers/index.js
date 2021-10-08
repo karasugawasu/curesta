@@ -34,6 +34,7 @@ import circleAdder from './circle_adder';
 import filters from './filters';
 import conversations from './conversations';
 import suggestions from './suggestions';
+import cure_announcements from './cure_announcements';
 import polls from './polls';
 import identity_proofs from './identity_proofs';
 import trends from './trends';
@@ -76,6 +77,7 @@ const reducers = {
   lists,
   listEditor,
   listAdder,
+  cure_announcements,
   circles,
   circleEditor,
   circleAdder,

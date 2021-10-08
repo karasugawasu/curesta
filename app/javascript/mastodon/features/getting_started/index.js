@@ -25,7 +25,6 @@ const messages = defineMessages({
   notifications: { id: 'tabs_bar.notifications', defaultMessage: 'Notifications' },
   public_timeline: { id: 'navigation_bar.public_timeline', defaultMessage: 'Federated timeline' },
   settings_subheading: { id: 'column_subheading.settings', defaultMessage: 'Settings' },
-  precure_timeline: { id: 'navigation_bar.precure_timeline', defaultMessage: 'precure_fun' },
   community_timeline: { id: 'navigation_bar.community_timeline', defaultMessage: 'Local timeline' },
   direct: { id: 'navigation_bar.direct', defaultMessage: 'Direct messages' },
   bookmarks: { id: 'navigation_bar.bookmarks', defaultMessage: 'Bookmarks' },
@@ -125,12 +124,11 @@ class GettingStarted extends ImmutablePureComponent {
     if (multiColumn) {
       navItems.push(
         <ColumnSubheading key='header-discover' text={intl.formatMessage(messages.discover)} />,
-        <ColumnLink key={i++} icon='hashtag' text={intl.formatMessage(messages.precure_timeline)} to='/timelines/tag/precure_fun' />,
         <ColumnLink key='community_timeline' icon='users' text={intl.formatMessage(messages.community_timeline)} to='/timelines/public/local' />,
         <ColumnLink key='public_timeline' icon='globe' text={intl.formatMessage(messages.public_timeline)} to='/timelines/public' />,
       );
 
-      height += 34 + 48*3;
+      height += 34 + 48*2;
 
       navItems.push(
         <ColumnLink key='group_directory' icon='address-book' text={intl.formatMessage(messages.group_directory)} to='/group_directory' />,

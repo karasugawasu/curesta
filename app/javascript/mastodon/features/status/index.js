@@ -556,7 +556,7 @@ class Status extends ImmutablePureComponent {
 
   render () {
     let ancestors, descendants;
-    const { status, ancestorsIds, descendantsIds, intl, domain, multiColumn, pictureInPicture, emojiMap } = this.props;
+    const { status, ancestorsIds, descendantsIds, intl, domain, multiColumn, pictureInPicture } = this.props;
     const { fullscreen } = this.state;
 
     if (status === null) {

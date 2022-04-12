@@ -40,13 +40,15 @@
 #  also_known_as                 :string           is an Array
 #  silenced_at                   :datetime
 #  suspended_at                  :datetime
-#  trust_level                   :integer
 #  hide_collections              :boolean
 #  avatar_storage_schema_version :integer
 #  header_storage_schema_version :integer
 #  devices_url                   :string
 #  suspension_origin             :integer
 #  sensitized_at                 :datetime
+#  trendable                     :boolean
+#  reviewed_at                   :datetime
+#  requested_review_at           :datetime
 #
 
 class Account < ApplicationRecord
@@ -56,28 +58,24 @@ class Account < ApplicationRecord
     remote_url
     salmon_url
     hub_url
+    trust_level
   )
 
   USERNAME_RE   = /[a-z0-9_]+([a-z0-9_\.-]+[a-z0-9_]+)?/i
   MENTION_RE    = /(?<=^|[^\/[:word:]])@((#{USERNAME_RE})(?:@[[:word:]\.\-]+[[:word:]]+)?)/i
   URL_PREFIX_RE = /\Ahttp(s?):\/\/[^\/]+/
 
+  include Attachmentable
   include AccountAssociations
   include AccountAvatar
   include AccountFinderConcern
   include AccountHeader
   include AccountInteractions
-  include Attachmentable
   include Paginable
   include AccountCounters
   include DomainNormalizable
   include DomainMaterializable
   include AccountMerging
-
-  TRUST_LEVELS = {
-    untrusted: 0,
-    trusted: 1,
-  }.freeze
 
   enum protocol: [:ostatus, :activitypub]
   enum suspension_origin: [:local, :remote], _prefix: true
@@ -93,7 +91,7 @@ class Account < ApplicationRecord
   validates_with UnreservedUsernameValidator, if: -> { local? && will_save_change_to_username? }
   validates :display_name, length: { maximum: 30 }, if: -> { local? && will_save_change_to_display_name? }
   validates :note, note_length: { maximum: 500 }, if: -> { local? && will_save_change_to_note? }
-  validates :fields, length: { maximum: 10 }, if: -> { local? && will_save_change_to_fields? }
+  validates :fields, length: { maximum: 4 }, if: -> { local? && will_save_change_to_fields? }
 
   scope :remote, -> { where.not(domain: nil) }
   scope :local, -> { where(domain: nil) }
@@ -123,19 +121,20 @@ class Account < ApplicationRecord
 
   delegate :email,
            :unconfirmed_email,
-           :current_sign_in_ip,
            :current_sign_in_at,
+           :created_at,
+           :sign_up_ip,
            :confirmed?,
            :approved?,
            :pending?,
            :disabled?,
+           :unconfirmed?,
            :unconfirmed_or_pending?,
            :role,
            :admin?,
            :moderator?,
            :staff?,
            :locale,
-           :hides_network?,
            :shows_application?,
            to: :user,
            prefix: true,
@@ -143,7 +142,7 @@ class Account < ApplicationRecord
 
   delegate :chosen_languages, to: :user, prefix: false, allow_nil: true
 
-  update_index('accounts#account', :self)
+  update_index('accounts', :self)
 
   def local?
     domain.nil?
@@ -199,10 +198,6 @@ class Account < ApplicationRecord
 
   def possibly_stale?
     last_webfingered_at.nil? || last_webfingered_at <= 1.day.ago
-  end
-
-  def trust_level
-    self[:trust_level] || 0
   end
 
   def refresh!
@@ -269,6 +264,10 @@ class Account < ApplicationRecord
     true
   end
 
+  def previous_strikes_count
+    strikes.where(overruled_at: nil).count
+  end
+
   def keypair
     @keypair ||= OpenSSL::PKey::RSA.new(private_key || public_key)
   end
@@ -325,7 +324,7 @@ class Account < ApplicationRecord
     self[:fields] = fields
   end
 
-  DEFAULT_FIELDS_SIZE = 10
+  DEFAULT_FIELDS_SIZE = 4
 
   def build_fields
     return if fields.size >= DEFAULT_FIELDS_SIZE
@@ -350,11 +349,11 @@ class Account < ApplicationRecord
   end
 
   def hides_followers?
-    hide_collections? || user_hides_network?
+    hide_collections?
   end
 
   def hides_following?
-    hide_collections? || user_hides_network?
+    hide_collections?
   end
 
   def object_type
@@ -381,6 +380,22 @@ class Account < ApplicationRecord
     return 'local' if local?
 
     @synchronization_uri_prefix ||= "#{uri[URL_PREFIX_RE]}/"
+  end
+
+  def requires_review?
+    reviewed_at.nil?
+  end
+
+  def reviewed?
+    reviewed_at.present?
+  end
+
+  def requested_review?
+    requested_review_at.present?
+  end
+
+  def requires_review_notification?
+    requires_review? && !requested_review?
   end
 
   class Field < ActiveModelSerializers::Model

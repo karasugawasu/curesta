@@ -52,7 +52,6 @@ class Auth::RegistrationsController < Devise::RegistrationsController
     resource.registration_form_time = session[:registration_form_time]
     resource.sign_up_ip             = request.remote_ip
 
-    resource.current_sign_in_ip = request.remote_ip if resource.current_sign_in_ip.nil?
     resource.build_account if resource.account.nil?
   end
 
@@ -155,6 +154,6 @@ class Auth::RegistrationsController < Devise::RegistrationsController
   end
 
   def set_cache_headers
-    response.headers['Cache-Control'] = 'no-cache, no-store, max-age=0, must-revalidate'
+    response.headers['Cache-Control'] = 'private, no-store'
   end
 end

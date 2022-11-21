@@ -1002,7 +1002,6 @@
   font-weight: 700;
   font-size: 11px;
   padding: 0 6px;
-  text-transform: uppercase;
   line-height: 20px;
   cursor: pointer;
   vertical-align: top;
@@ -1544,7 +1543,6 @@ a .account__avatar {
 
   & > span {
     display: block;
-    text-transform: uppercase;
     font-size: 11px;
     color: $darker-text-color;
   }
@@ -3110,7 +3108,6 @@ $ui-header-height: 55px;
   padding: 8px 20px;
   font-size: 12px;
   font-weight: 500;
-  text-transform: uppercase;
   cursor: default;
 }
 
@@ -3140,7 +3137,6 @@ $ui-header-height: 55px;
 
     h4 {
       font-size: 12px;
-      text-transform: uppercase;
       color: $darker-text-color;
       padding: 10px;
       font-weight: 500;
@@ -3772,7 +3768,6 @@ a.status-card.compact:hover {
   color: $dark-text-color;
   font-size: 12px;
   font-weight: 400;
-  text-transform: uppercase;
   overflow: visible;
   position: absolute;
   top: 50%;
@@ -4118,7 +4113,6 @@ a.status-card.compact:hover {
   margin-bottom: 4px;
   display: block;
   background-color: $base-overlay-background;
-  text-transform: uppercase;
   font-size: 11px;
   font-weight: 500;
   padding: 4px;
@@ -4427,7 +4421,6 @@ a.status-card.compact:hover {
 
   span {
     font-size: 12px;
-    text-transform: uppercase;
     font-weight: 500;
     display: block;
   }
@@ -5150,7 +5143,6 @@ a.status-card.compact:hover {
     font-weight: 500;
     color: $inverted-text-color;
     margin-bottom: 5px;
-    text-transform: uppercase;
     font-size: 12px;
   }
 
@@ -7120,7 +7112,6 @@ noscript {
       dt {
         width: auto;
         background: transparent;
-        text-transform: uppercase;
         color: $dark-text-color;
       }
 
@@ -7193,7 +7184,6 @@ noscript {
       font-size: 12px;
       font-weight: 500;
       color: $darker-text-color;
-      text-transform: uppercase;
       margin-bottom: 5px;
     }
 
@@ -7944,7 +7934,6 @@ noscript {
   }
 
   h4 {
-    text-transform: uppercase;
     color: $darker-text-color;
     margin-bottom: 10px;
     font-weight: 600;
@@ -8449,7 +8438,6 @@ noscript {
 
     h4 {
       font-size: 15px;
-      text-transform: uppercase;
       color: $darker-text-color;
       font-weight: 500;
       margin-bottom: 20px;

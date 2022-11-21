@@ -118,6 +118,17 @@ class GettingStarted extends ImmutablePureComponent {
         <ColumnLink key='lists' icon='list-ul' text={intl.formatMessage(messages.lists)} to='/lists' />,
       );
 
+      const request = new XMLHttpRequest();
+      request.open('GET', '/links.json', false);
+      request.send(null);
+      const groups = JSON.parse(request.responseText);
+      for (let group of groups) {
+        navItems.push(<ColumnSubheading key='header-{group.body}' text={group.body} />);
+        for (let link of group.links) {
+          navItems.push(<ColumnLink key='{group.body}-{link.body}' icon={link.icon} text={link.body} href={link.href} />);
+        }
+      }
+
       if (myAccount.get('locked') || unreadFollowRequests > 0) {
         navItems.push(<ColumnLink key='follow_requests' icon='user-plus' text={intl.formatMessage(messages.follow_requests)} badge={badgeDisplay(unreadFollowRequests, 40)} to='/follow_requests' />);
       }

@@ -31,7 +31,6 @@ import listAdder from './list_adder';
 import filters from './filters';
 import conversations from './conversations';
 import suggestions from './suggestions';
-import cure_announcements from './cure_announcements';
 import polls from './polls';
 import trends from './trends';
 import missed_updates from './missed_updates';
@@ -74,7 +73,6 @@ const reducers = {
   lists,
   listEditor,
   listAdder,
-  cure_announcements,
   filters,
   conversations,
   suggestions,

@@ -30,7 +30,7 @@ class ActivityPub::ProcessAccountService < BaseService
       process_tags
 
       process_duplicate_accounts! if @options[:verified_webfinger]
-  end
+    end
 
     after_protocol_change! if protocol_changed?
     after_key_change! if key_changed? && !@options[:signed_with_known_key]

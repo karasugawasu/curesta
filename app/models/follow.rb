@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: follows
@@ -11,6 +12,8 @@
 #  show_reblogs      :boolean          default(TRUE), not null
 #  uri               :string
 #  notify            :boolean          default(FALSE), not null
+#  private           :boolean          default(TRUE), not null
+#  delivery          :boolean          default(TRUE), not null
 #  languages         :string           is an Array
 #
 

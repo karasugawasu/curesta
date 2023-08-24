@@ -2,12 +2,13 @@
 
 class SearchService < BaseService
   def call(query, account, limit, options = {})
-    @query   = query&.strip
-    @account = account
-    @options = options
-    @limit   = limit.to_i
-    @offset  = options[:type].blank? ? 0 : options[:offset].to_i
-    @resolve = options[:resolve] || false
+    @query     = query&.strip
+    @account   = account
+    @options   = options
+    @limit     = limit.to_i
+    @offset    = options[:type].blank? ? 0 : options[:offset].to_i
+    @resolve   = options[:resolve] || false
+    @following = options[:following] || false
 
     default_results.tap do |results|
       next if @query.blank? || @limit.zero?
@@ -16,9 +17,7 @@ class SearchService < BaseService
         results.merge!(url_resource_results) unless url_resource.nil? || @offset.positive? || (@options[:type].present? && url_resource_symbol != @options[:type].to_sym)
       elsif @query.present?
         results[:accounts] = perform_accounts_search! if account_searchable?
-        results[:statuses] = perform_statuses_search!
-        results[:statuses].concat(perform_mediadescription_search!)
-        results[:statuses] = results[:statuses].uniq.sort_by{|v| v['updated_at']}.reverse.first(@limit)
+        results[:statuses] = perform_statuses_search! if full_text_searchable?
         results[:hashtags] = perform_hashtags_search! if hashtag_searchable?
       end
     end
@@ -32,45 +31,32 @@ class SearchService < BaseService
       @account,
       limit: @limit,
       resolve: @resolve,
-      offset: @offset
+      offset: @offset,
+      use_searchable_text: true,
+      following: @following,
+      start_with_hashtag: @query.start_with?('#')
     )
   end
 
   def perform_statuses_search!
-    statuses = Status.joins(:account)
-      .where('accounts.domain IS NULL')
-      .where('statuses.local=true')
-      .limit(@limit)
-    @query.split(/[\s　]+/).each do |keyword|
-      if (matches = keyword.match(/^-(.*)/))
-        keyword = matches[1]
-        statuses = statuses.where('statuses.text !~ ?', keyword)
-      else
-        statuses = statuses.where('statuses.text ~ ?', keyword)
-      end
-    end
-    statuses.reject { |status| StatusFilter.new(status, @account).filtered? }
-  rescue Faraday::ConnectionFailed
-    []
-  end
+    definition = parsed_query.apply(StatusesIndex.filter(term: { searchable_by: @account.id }))
 
-  def perform_mediadescription_search!
-    medias = Status
-      .joins(:account)
-      .joins(:media_attachments)
-      .where('accounts.domain IS NULL')
-      .where('statuses.local=true')
-      .limit(@limit)
-    @query.split(/[\s　]+/).each do |keyword|
-      if (matches = keyword.match(/^-(.*)/))
-        keyword = matches[1]
-        medias = medias.where('media_attachments.description !~ ?', keyword)
-      else
-        medias = medias.where('media_attachments.description ~ ?', keyword)
-      end
+    definition = definition.filter(term: { account_id: @options[:account_id] }) if @options[:account_id].present?
+
+    if @options[:min_id].present? || @options[:max_id].present?
+      range      = {}
+      range[:gt] = @options[:min_id].to_i if @options[:min_id].present?
+      range[:lt] = @options[:max_id].to_i if @options[:max_id].present?
+      definition = definition.filter(range: { id: range })
     end
-    medias.reject { |status| StatusFilter.new(status, @account).filtered? }
-  rescue Faraday::ConnectionFailed
+
+    results             = definition.limit(@limit).offset(@offset).objects.compact
+    account_ids         = results.map(&:account_id)
+    account_domains     = results.map(&:account_domain)
+    preloaded_relations = @account.relations_map(account_ids, account_domains)
+
+    results.reject { |status| StatusFilter.new(status, @account, preloaded_relations).filtered? }
+  rescue Faraday::ConnectionFailed, Parslet::ParseFailed
     []
   end
 
@@ -88,7 +74,7 @@ class SearchService < BaseService
   end
 
   def url_query?
-    @resolve && /\Ahttps?:\/\//.match?(@query)
+    @resolve && %r{\Ahttps?://}.match?(@query)
   end
 
   def url_resource_results
@@ -96,7 +82,7 @@ class SearchService < BaseService
   end
 
   def url_resource
-    @_url_resource ||= ResolveURLService.new.call(@query, on_behalf_of: @account)
+    @url_resource ||= ResolveURLService.new.call(@query, on_behalf_of: @account)
   end
 
   def url_resource_symbol
@@ -106,11 +92,11 @@ class SearchService < BaseService
   def full_text_searchable?
     return false unless Chewy.enabled?
 
-    statuses_search? && !@account.nil? && !((@query.start_with?('#') || @query.include?('@')) && !@query.include?(' '))
+    statuses_search? && !@account.nil? && !(@query.include?('@') && !@query.include?(' '))
   end
 
   def account_searchable?
-    account_search? && !(@query.start_with?('#') || (@query.include?('@') && @query.include?(' ')))
+    account_search? && !(@query.include?('@') && @query.include?(' '))
   end
 
   def hashtag_searchable?
@@ -127,16 +113,6 @@ class SearchService < BaseService
 
   def statuses_search?
     @options[:type].blank? || @options[:type] == 'statuses'
-  end
-
-  def relations_map_for_account(account, account_ids, domains)
-    {
-      blocking: Account.blocking_map(account_ids, account.id),
-      blocked_by: Account.blocked_by_map(account_ids, account.id),
-      muting: Account.muting_map(account_ids, account.id),
-      following: Account.following_map(account_ids, account.id),
-      domain_blocking_by_domain: Account.domain_blocking_map_by_domain(domains, account.id),
-    }
   end
 
   def parsed_query

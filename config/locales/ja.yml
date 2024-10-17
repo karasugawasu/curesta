@@ -17,8 +17,8 @@ ja:
     pin_errors:
       following: おすすめしたい人はあなたが既にフォローしている必要があります
     posts:
-      other: 投稿
-    posts_tab_heading: 投稿
+      other: キュア！
+    posts_tab_heading: キュア！
   admin:
     account_actions:
       action: アクションを実行
@@ -144,7 +144,7 @@ ja:
         targeted_reports: このアカウントについての通報
       silence: サイレンス
       silenced: サイレンス済み
-      statuses: 投稿数
+      statuses: キュア！数
       strikes: 前回のストライク
       subscribe: 購読する
       suspend: サスペンド
@@ -193,7 +193,7 @@ ja:
         destroy_email_domain_block: メールドメインブロックを削除
         destroy_instance: ドメインをブロックする
         destroy_ip_block: IPルールを削除
-        destroy_status: 投稿を削除
+        destroy_status: キュア！を削除
         destroy_unavailable_domain: 配送できないドメインを削除
         destroy_user_role: ロールを削除
         disable_2fa_user: 二要素認証を無効化
@@ -225,7 +225,7 @@ ja:
         update_domain_block: ドメインブロックを更新
         update_ip_block: IPルールを更新
         update_report: 通報の更新
-        update_status: 投稿を更新
+        update_status: キュア！を更新
         update_user_role: ロールを更新
       actions:
         approve_appeal_html: "%{name}さんが%{target}さんからの抗議を承認しました"
@@ -253,7 +253,7 @@ ja:
         destroy_email_domain_block_html: "%{name} がメールドメイン %{target} のブロックを外しました"
         destroy_instance_html: "%{name}さんがドメイン %{target}をブロックしました"
         destroy_ip_block_html: "%{name}さんが IP %{target}のルールを削除しました"
-        destroy_status_html: "%{name}さんが%{target}さんの投稿を削除しました"
+        destroy_status_html: "%{name}さんが%{target}さんのキュア！を削除しました"
         destroy_unavailable_domain_html: "%{name}がドメイン %{target}への配送を再開しました"
         destroy_user_role_html: "%{name}さんがロール『%{target}』を削除しました"
         disable_2fa_user_html: "%{name}さんが%{target}さんの二要素認証を無効化しました"
@@ -285,7 +285,7 @@ ja:
         update_domain_block_html: "%{name}さんが%{target}のドメインブロックを更新しました"
         update_ip_block_html: "%{name} さんがIP %{target} のルールを更新しました"
         update_report_html: "%{name}さんが通報 %{target} を更新しました"
-        update_status_html: "%{name}さんが%{target}さんの投稿を更新しました"
+        update_status_html: "%{name}さんが%{target}さんのキュア！を更新しました"
         update_user_role_html: "%{name}さんがロール『%{target}』を変更しました"
       deleted_account: 削除されたアカウント
       empty: ログが見つかりませんでした
@@ -401,7 +401,7 @@ ja:
         create: ブロックを作成
         hint: ドメインブロックはデータベース中のアカウント項目の作成を妨げませんが、遡って自動的に指定されたモデレーションをそれらのアカウントに適用します。
         severity:
-          desc_html: "<strong>制限</strong>は、このドメイン上のアカウントからの投稿が、相手をフォローしている場合を除き非表示になります。<strong>停止</strong>は、このドメイン上のすべてのコンテンツ、メディア、およびプロフィールデータを受け付けなくなります。メディアファイルのみを拒否したい場合は<strong>なし</strong>を選択します。"
+          desc_html: "<strong>制限</strong>は、このドメイン上のアカウントからのキュア！が、相手をフォローしている場合を除き非表示になります。<strong>停止</strong>は、このドメイン上のすべてのコンテンツ、メディア、およびプロフィールデータを受け付けなくなります。メディアファイルのみを拒否したい場合は<strong>なし</strong>を選択します。"
           noop: なし
           silence: 制限
           suspend: 停止
@@ -501,7 +501,7 @@ ja:
         instance_languages_dimension: 人気の言語
         instance_media_attachments_measure: 保存されたメディア
         instance_reports_measure: 通報
-        instance_statuses_measure: 保存された投稿
+        instance_statuses_measure: 保存されたキュア！
       delivery:
         all: すべて
         clear: 配送エラーをクリア
@@ -560,11 +560,11 @@ ja:
     relays:
       add_new: リレーを追加
       delete: 削除
-      description_html: "<strong>連合リレー</strong>とは、登録しているサーバー間の公開投稿を仲介するサーバーです。<strong>中小規模のサーバーが連合のコンテンツを見つけるのを助けます。</strong>これを使用しない場合、ローカルユーザーがリモートユーザーを手動でフォローする必要があります。"
+      description_html: "<strong>連合リレー</strong>とは、登録しているサーバー間の公開キュア！を仲介するサーバーです。<strong>中小規模のサーバーが連合のコンテンツを見つけるのを助けます。</strong>これを使用しない場合、ローカルユーザーがリモートユーザーを手動でフォローする必要があります。"
       disable: 無効化
       disabled: 無効
       enable: 有効化
-      enable_hint: 有効にすると、リレーから全ての公開投稿を受信するようになり、またこのサーバーの全ての公開投稿をリレーに送信するようになります。
+      enable_hint: 有効にすると、リレーから全ての公開キュア！を受信するようになり、またこのサーバーの全ての公開キュア！をリレーに送信するようになります。
       enabled: 有効
       inbox_url: リレーURL
       pending: リレーサーバーの承認待ちです
@@ -583,15 +583,15 @@ ja:
       action_log: 監査ログ
       action_taken_by: 通報処理者
       actions:
-        delete_description_html: 報告された投稿は削除され、ストライクが記録されます。同じアカウントによる今後の違反行為のエスカレーションに役立てられます。
-        mark_as_sensitive_description_html: 報告された投稿のメディアは閲覧注意となり、ストライクが記録され、同じアカウントによる今後の違反行為のエスカレーションに役立てられます。
+        delete_description_html: 報告されたキュア！は削除され、ストライクが記録されます。同じアカウントによる今後の違反行為のエスカレーションに役立てられます。
+        mark_as_sensitive_description_html: 報告されたキュア！のメディアは閲覧注意となり、ストライクが記録され、同じアカウントによる今後の違反行為のエスカレーションに役立てられます。
         other_description_html: アカウントの動作を制御するためのオプションや、報告されたアカウントへの通信をカスタマイズするためのオプションを確認してください。
         resolve_description_html: 報告されたアカウントに対していかなる措置も取られず、ストライクも記録されず、報告は終了します。
         silence_description_html: このアカウントは、すでにフォローしている人、または手動で検索した人にしか見えないため、リーチが極端に制限されます。いつでも元に戻すことができます。このアカウントに対するすべての通報をクローズします。
         suspend_description_html: アカウントとそのすべての内容にアクセスできなくなり、最終的に削除され、やり取りは不可能になります。 30日以内であれば元に戻すことができます。このアカウントに対するすべての通報をクローズします。
       actions_description_html: このレポートへのアクションを決定してください。アカウントへ懲罰的な措置を取った場合、<strong>Span</strong>カテゴリが選択されている場合を除き、メール通知が送信されます。
       actions_description_remote_html: この通報を解決するためのアクションを選択してください。これは<strong>あなたの</strong>サーバーがこのリモートアカウントと通信し、そのコンテンツを処理する時のみ影響します。
-      actions_no_posts: 削除対象となる投稿がレポートに含まれていません
+      actions_no_posts: 削除対象となるキュア！がレポートに含まれていません
       add_to_report: 通報にさらに追加
       already_suspended_badges:
         local: このサーバーで停止済み
@@ -609,7 +609,7 @@ ja:
       confirm: 確認
       confirm_action: "@%{acct} さんに対するアクション"
       created_at: 通報日時
-      delete_and_resolve: 投稿を削除
+      delete_and_resolve: キュア！を削除
       forwarded: 転送済み
       forwarded_replies_explanation: これはリモートユーザーによる、リモートコンテンツについての報告です。問題のコンテンツはあなたのサーバー利用者への返信なので、こちらにも転送されて来ました。
       forwarded_to: "%{domain}に転送されました"
@@ -638,18 +638,18 @@ ja:
       skip_to_actions: アクションに移動
       status: ステータス
       statuses: 通報内容
-      statuses_description_html: 問題の投稿は通報されたアカウントへの連絡時に引用されます
+      statuses_description_html: 問題のキュア！は通報されたアカウントへの連絡時に引用されます
       summary:
         action_preambles:
-          delete_html: "<strong>@%{acct}</strong>さんの投稿を<strong>削除</strong>します。この操作は:"
-          mark_as_sensitive_html: "<strong>@%{acct}</strong>さんの投稿を<strong>閲覧注意</strong>として<strong>マーク</strong>します。この操作は:"
+          delete_html: "<strong>@%{acct}</strong>さんのキュア！を<strong>削除</strong>します。この操作は:"
+          mark_as_sensitive_html: "<strong>@%{acct}</strong>さんのキュア！を<strong>閲覧注意</strong>として<strong>マーク</strong>します。この操作は:"
           silence_html: "<strong>@%{acct}</strong>さんのアカウントを<strong>制限 (サイレンス) </strong>します。この操作は:"
           suspend_html: "<strong>@%{acct}</strong>さんのアカウントを<strong>停止 (サスペンド) </strong>します。この操作は:"
         actions:
-          delete_html: 当該の投稿を削除します
-          mark_as_sensitive_html: 当該の投稿に含まれるメディアを閲覧注意にします
+          delete_html: 当該のキュア！を削除します
+          mark_as_sensitive_html: 当該のキュア！に含まれるメディアを閲覧注意にします
           silence_html: "<strong>@%{acct}</strong>さんのプロフィールとコンテンツの表示範囲をフォロー中の人や意図的にプロフィールにアクセスした人のみに制限することで、アカウントを発見されにくくします"
-          suspend_html: "<strong>@%{acct}</strong>さんのアカウントが凍結され、プロフィールとコンテンツへのアクセス、および投稿ができなくなります"
+          suspend_html: "<strong>@%{acct}</strong>さんのアカウントが凍結され、プロフィールとコンテンツへのアクセス、およびキュア！ができなくなります"
         close_report: '通報 #%{id} を解決済みにします'
         close_reports_html: "<strong>@%{acct}</strong>さんに対する<strong>すべての</strong>通報を解決済みにします"
         delete_data_html: 停止が解除されないまま30日経過すると、<strong>@%{acct}</strong>さんのプロフィールとコンテンツは削除されます
@@ -777,7 +777,7 @@ ja:
         warning_hint: モデレーションチームがスパムや悪意のある登録を迅速に処理できる自信がない限り、サインアップを承認制にすることをお勧めします。
       security:
         authorized_fetch: 連合サーバーによる署名なしでの情報取得を拒否する
-        authorized_fetch_hint: ほかの連合サーバーから受け付けるリクエストに署名を必須にすることで、ユーザーによるブロックおよびドメインブロック両方の効果をより強力にします。ただし連合の処理コストが増えてパフォーマンス面で不利になるほか、このサーバーから送られた反応が届く範囲が狭まったり、連合における互換性の問題を招く可能性もあります。また、この機能は公開投稿やプロフィールへのアクセスをブロックした相手から完全に遮断できるものではありません。
+        authorized_fetch_hint: ほかの連合サーバーから受け付けるリクエストに署名を必須にすることで、ユーザーによるブロックおよびドメインブロック両方の効果をより強力にします。ただし連合の処理コストが増えてパフォーマンス面で不利になるほか、このサーバーから送られた反応が届く範囲が狭まったり、連合における互換性の問題を招く可能性もあります。また、この機能は公開キュア！やプロフィールへのアクセスをブロックした相手から完全に遮断できるものではありません。
         authorized_fetch_overridden_hint: この設定は環境変数で指定されているため、ここでは変更できません。
         federation_authentication: 連合に署名を必須にする
       title: サーバー設定
@@ -813,19 +813,19 @@ ja:
         title: メディア
       metadata: メタデータ
       no_status_selected: 何も選択されていないため、変更されていません
-      open: 投稿を開く
-      original_status: オリジナルの投稿
+      open: キュア！を開く
+      original_status: オリジナルのキュア！
       reblogs: ブースト
-      status_changed: 投稿を変更しました
-      title: 投稿一覧
+      status_changed: キュア！を変更しました
+      title: キュア！一覧
       trending: トレンド
       visibility: 公開範囲
       with_media: メディアあり
     strikes:
       actions:
-        delete_statuses: "%{name}さんが%{target}さんの投稿を削除しました"
+        delete_statuses: "%{name}さんが%{target}さんのキュア！を削除しました"
         disable: "%{name}さんが%{target}さんを凍結しました"
-        mark_statuses_as_sensitive: "%{name}さんが%{target}さんの投稿を閲覧注意としてマークしました"
+        mark_statuses_as_sensitive: "%{name}さんが%{target}さんのキュア！を閲覧注意としてマークしました"
         none: "%{name}さんが%{target}さんに警告を送信しました"
         sensitive: "%{name}さんが%{target}さんのアカウントを閲覧注意としてマークしました"
         silence: "%{name}さんが%{target}さんを制限しました"
@@ -927,19 +927,19 @@ ja:
       rejected: 拒否
       statuses:
         allow: 掲載を許可
-        allow_account: 投稿者を許可
+        allow_account: キュア！者を許可
         confirm_allow: 本当に選択されたトゥートを許可しますか？
         confirm_allow_account: 本当に選択されたアカウントを許可しますか？
         confirm_disallow: 本当に選択されたトゥートを禁止しますか？
         confirm_disallow_account: 本当に選択されたアカウントを禁止しますか？
-        description_html: これらは、このサーバーが知っている、たくさんシェアされ、お気に入り登録されている投稿です。新しいユーザーや久しぶりにアクセスするユーザーがフォローする人を探すのに役立ちます。あなたが投稿者を承認し、投稿者が許可するまで、表示されることはありません。また、個別の投稿を許可または拒否することもできます。
+        description_html: これらは、このサーバーが知っている、たくさんシェアされ、お気に入り登録されているキュア！です。新しいユーザーや久しぶりにアクセスするユーザーがフォローする人を探すのに役立ちます。あなたがキュア！者を承認し、キュア！者が許可するまで、表示されることはありません。また、個別のキュア！を許可または拒否することもできます。
         disallow: 掲載を拒否
-        disallow_account: 投稿者を拒否
+        disallow_account: キュア！者を拒否
         no_status_selected: 何も選択されていないため、変更されていません
-        not_discoverable: 投稿者は発見可能であることに同意していません
+        not_discoverable: キュア！者は発見可能であることに同意していません
         shared_by:
           other: "%{friendly_count}回の共有、お気に入り"
-        title: トレンド投稿
+        title: トレンドキュア！
       tags:
         current_score: 現在のスコア %{score}
         dashboard:
@@ -948,7 +948,7 @@ ja:
           tag_servers_dimension: 人気のサーバー
           tag_servers_measure: その他のサーバー
           tag_uses_measure: 合計利用数
-        description_html: これらは、多くの投稿に使用されているハッシュタグです。あなたのユーザーが、人々が今一番話題にしていることを知るのに役立ちます。あなたが承認するまで、ハッシュタグは一般に表示されません。
+        description_html: これらは、多くのキュア！に使用されているハッシュタグです。あなたのユーザーが、人々が今一番話題にしていることを知るのに役立ちます。あなたが承認するまで、ハッシュタグは一般に表示されません。
         listable: おすすめに表示する
         no_tag_selected: 何も選択されていないため、変更されていません
         not_listable: おすすめに表示しない
@@ -986,7 +986,7 @@ ja:
       new: 新しいwebhook
       rotate_secret: シークレットをローテートする
       secret: シークレットに署名
-      status: 投稿
+      status: キュア！
       title: Webhooks
       webhook: Webhook
   admin_mailer:
@@ -995,7 +995,7 @@ ja:
       subject: "%{instance} のアカウント作成は自動的に承認制に変更されました"
     new_appeal:
       actions:
-        delete_statuses: 投稿を削除する
+        delete_statuses: キュア！を削除する
         disable: アカウントを無効にする
         mark_statuses_as_sensitive: 閲覧注意としてマーク
         none: 警告
@@ -1023,7 +1023,7 @@ ja:
       new_trending_links:
         title: トレンドリンク
       new_trending_statuses:
-        title: トレンド投稿
+        title: トレンドキュア！
       new_trending_tags:
         title: トレンドハッシュタグ
       subject: "%{instance}で新しいトレンドが審査待ちです"
@@ -1052,7 +1052,7 @@ ja:
     unsubscribe: 購読解除
     view: 'リンク:'
     view_profile: プロフィールを表示
-    view_status: 投稿を表示
+    view_status: キュア！を表示
   applications:
     created: アプリが作成されました
     destroyed: アプリが削除されました
@@ -1179,7 +1179,7 @@ ja:
     warning:
       before: '続行する前に、次の点を再度確認してください:'
       caches: 他のサーバーにコンテンツのキャッシュがずっと残る場合があります
-      data_removal: あなたの投稿やその他のデータはこのサーバーから完全に削除されます
+      data_removal: あなたのキュア！やその他のデータはこのサーバーから完全に削除されます
       email_change_html: アカウントを削除しなくても<a href="%{path}">メールアドレスを変更</a>できます
       email_contact_html: それでも届かない場合、<a href="mailto:%{email}">%{email}</a>までメールで問い合わせてください
       email_reconfirmation_html: 確認メールが届かない場合は<a href="%{path}">こちらから確認メールを再送</a>してみてください
@@ -1203,13 +1203,13 @@ ja:
       description_html: これらは、%{instance}のスタッフがあなたのアカウントに対して行った措置や、あなたに送られた警告です。
       recipient: 送信元
       reject_appeal: 抗議を却下
-      status: '投稿 #%{id}'
+      status: 'キュア！ #%{id}'
       status_removed: 既に削除されています
       title: "%{date}に%{action}"
       title_actions:
-        delete_statuses: 投稿の削除
+        delete_statuses: キュア！の削除
         disable: アカウント凍結
-        mark_statuses_as_sensitive: 投稿を閲覧注意としてマーク
+        mark_statuses_as_sensitive: キュア！を閲覧注意としてマーク
         none: 警告
         sensitive: アカウントを閲覧注意としてマーク
         silence: アカウントの制限
@@ -1219,7 +1219,7 @@ ja:
       your_appeal_rejected: 申し立ては拒否されました
   edit_profile:
     basic_information: 基本情報
-    hint_html: "<strong>アカウントのトップページや投稿の隣に表示される公開情報です。</strong>プロフィールとアイコンを設定することで、ほかのユーザーは親しみやすく、またフォローしやすくなります。"
+    hint_html: "<strong>アカウントのトップページやキュア！の隣に表示される公開情報です。</strong>プロフィールとアイコンを設定することで、ほかのユーザーは親しみやすく、またフォローしやすくなります。"
     other: その他
   errors:
     '400': 送信されたリクエストは無効であるか、または不正なフォーマットです。
@@ -1243,7 +1243,7 @@ ja:
     archive_takeout:
       date: 日時
       download: ダウンロード
-      hint_html: "<strong>投稿本文とメディア</strong>のアーカイブをリクエストできます。 データはActivityPub形式で、対応しているソフトウェアで読み込むことができます。7日毎にアーカイブをリクエストできます。"
+      hint_html: "<strong>キュア！本文とメディア</strong>のアーカイブをリクエストできます。 データはActivityPub形式で、対応しているソフトウェアで読み込むことができます。7日毎にアーカイブをリクエストできます。"
       in_progress: 準備中...
       request: アーカイブをリクエスト
       size: 容量
@@ -1258,7 +1258,7 @@ ja:
     add_new: 追加
     errors:
       limit: すでに注目のハッシュタグの上限数に達しています
-    hint_html: "<strong>注目のハッシュタグとは？</strong>　プロフィールページに目立つ形で表示され、そのハッシュタグのついたあなたの公開投稿だけを抽出して閲覧できるようにします。クリエイティブな仕事や長期的なプロジェクトを追うのに優れた機能です。"
+    hint_html: "<strong>注目のハッシュタグとは？</strong>　プロフィールページに目立つ形で表示され、そのハッシュタグのついたあなたの公開キュア！だけを抽出して閲覧できるようにします。クリエイティブな仕事や長期的なプロジェクトを追うのに優れた機能です。"
   filters:
     contexts:
       account: プロフィール
@@ -1269,8 +1269,8 @@ ja:
     edit:
       add_keyword: キーワードを追加
       keywords: キーワード
-      statuses: 個別の投稿
-      statuses_hint_html: このフィルタは、以下のキーワードにマッチするかどうかに関わらず、個々の投稿を選択して適用されます。 <a href="%{path}">フィルターを確認または投稿を削除</a>。
+      statuses: 個別のキュア！
+      statuses_hint_html: このフィルタは、以下のキーワードにマッチするかどうかに関わらず、個々のキュア！を選択して適用されます。 <a href="%{path}">フィルターを確認またはキュア！を削除</a>。
       title: フィルターを編集
     errors:
       deprecated_api_multiple_keywords: これらのパラメータは複数のフィルタキーワードに適用されるため、このアプリケーションから変更できません。 最新のアプリケーションまたはWebインターフェースを使用してください。
@@ -1284,9 +1284,9 @@ ja:
       keywords:
         other: "%{count}件のキーワード"
       statuses:
-        other: "%{count}件の投稿"
+        other: "%{count}件のキュア！"
       statuses_long:
-        other: "%{count}件の投稿を非表示にしました"
+        other: "%{count}件のキュア！を非表示にしました"
       title: フィルター
     new:
       save: 新規フィルターを保存
@@ -1296,8 +1296,8 @@ ja:
       batch:
         remove: フィルターから削除する
       index:
-        hint: このフィルターは、他の条件に関係なく個々の投稿を選択する場合に適用されます。Webインターフェースからこのフィルターにさらに投稿を追加できます。
-        title: フィルターされた投稿
+        hint: このフィルターは、他の条件に関係なく個々のキュア！を選択する場合に適用されます。Webインターフェースからこのフィルターにさらにキュア！を追加できます。
+        title: フィルターされたキュア！
   generic:
     all: すべて
     all_items_on_page_selected_html:
@@ -1335,14 +1335,14 @@ ja:
       overwrite_long: 現在のレコードを新しいもので置き換えます
     overwrite_preambles:
       blocking_html: "<strong>%{filename}</strong>の<strong>%{total_items}個のアカウント</strong>で<strong>ブロックしたアカウントリストを置き換えます</strong>。"
-      bookmarks_html: "<strong>%{filename}</strong>の<strong>%{total_items}件の投稿</strong>で<strong>ブックマークの一覧を置き換えます</strong>。"
+      bookmarks_html: "<strong>%{filename}</strong>の<strong>%{total_items}件のキュア！</strong>で<strong>ブックマークの一覧を置き換えます</strong>。"
       domain_blocking_html: "<strong>%{filename}</strong>の<strong>%{total_items}個のドメイン</strong>で<strong>非表示にしたドメインリストを置き換えます</strong>。"
       following_html: "<strong>%{filename}</strong>の<strong>%{total_items}個のアカウント</strong>を<strong>フォローします</strong>。また、<strong>この中に含まれていないアカウントのフォローを解除します</strong>。"
       lists_html: "<strong>作成済みのリスト</strong>を<strong>%{filename}の内容で置き換えます</strong>。<strong>%{total_items}個のアカウント</strong>が新しいリストに追加されます。"
       muting_html: "<strong>%{filename}</strong>の<strong>%{total_items}個のアカウント</strong>で<strong>ミュートしたアカウントリストを置き換えます</strong>。"
     preambles:
       blocking_html: "<strong>%{filename}</strong>の<strong>%{total_items}個のアカウント</strong>を<strong>ブロックします</strong>。"
-      bookmarks_html: "<strong>%{filename}</strong>の<strong>%{total_items}件の投稿</strong>を<strong>ブックマークに追加します</strong>。"
+      bookmarks_html: "<strong>%{filename}</strong>の<strong>%{total_items}件のキュア！</strong>を<strong>ブックマークに追加します</strong>。"
       domain_blocking_html: "<strong>%{filename}</strong>の<strong>%{total_items}個のドメイン</strong>を<strong>非表示にします</strong>。"
       following_html: "<strong>%{filename}</strong>の<strong>%{total_items}個のアカウント</strong>を<strong>フォローします</strong>。"
       lists_html: "<strong>%{filename}</strong>の<strong>%{total_items}個のアカウント</strong>を<strong>リストに追加します</strong>。追加先のリストがない場合は新しく作成されます。"
@@ -1430,7 +1430,7 @@ ja:
   media_attachments:
     validations:
       images_and_video: 既に画像が追加されているため、動画を追加することはできません
-      not_found: メディア (%{ids}) が存在しないか、すでに添付して投稿されています
+      not_found: メディア (%{ids}) が存在しないか、すでに添付してキュア！されています
       not_ready: ファイルのアップロードに失敗しました。しばらくしてからもう一度お試しください！
       too_many: 追加できるファイルは4つまでです
   migrations:
@@ -1479,7 +1479,7 @@ ja:
       sign_up:
         subject: "%{name}さんがサインアップしました"
     favourite:
-      body: "%{name}さんにお気に入り登録された、あなたの投稿があります:"
+      body: "%{name}さんにお気に入り登録された、あなたのキュア！があります:"
       subject: "%{name}さんにお気に入りに登録されました"
       title: 新たなお気に入り登録
     follow:
@@ -1499,13 +1499,13 @@ ja:
     poll:
       subject: "%{name} さんの投票が終了しました"
     reblog:
-      body: "%{name}さんにブーストされた、あなたの投稿があります:"
+      body: "%{name}さんにブーストされた、あなたのキュア！があります:"
       subject: "%{name}さんにブーストされました"
       title: 新たなブースト
     status:
-      subject: "%{name}さんが投稿しました"
+      subject: "%{name}さんがキュア！しました"
     update:
-      subject: "%{name}さんが投稿を更新しました"
+      subject: "%{name}さんがキュア！を更新しました"
   notifications:
     administration_emails: 管理にかかわるメール通知
     email_events: メールによる通知
@@ -1529,9 +1529,9 @@ ja:
     setup: セットアップ
     wrong_code: コードが間違っています。サーバーとデバイスの時計にずれがあるかもしれません。
   pagination:
-    newer: 新しい投稿
+    newer: 新しいキュア！
     next: 次
-    older: 以前の投稿
+    older: 以前のキュア！
     prev: 前
     truncate: "&hellip;"
   polls:
@@ -1548,16 +1548,16 @@ ja:
       too_many_options: は%{max}個までです
   preferences:
     other: その他
-    posting_defaults: デフォルトの投稿設定
+    posting_defaults: デフォルトのキュア！設定
     public_timelines: 公開タイムライン
   privacy:
     hint_html: "<strong>プロフィールの見えかたや、ほかのユーザーからの見つかりやすさを設定します。</strong>Mastodonには自分のアカウントのことをより多くの人に知ってもらうためのさまざまな機能があり、有効・無効をそれぞれ切り換えられます。使いかたや好みに合わせて調節しましょう。"
     privacy: プライバシー
-    privacy_hint_html: 自分に関する情報をどの程度開示するかについての設定項目です。ユーザーはほかのアカウントのフォロー一覧を見て興味のあるアカウントを探したり、投稿元のアプリ名を見て自分が使いたいアプリの参考にすることがあります。希望に応じて、これらを見られないようにできます。
+    privacy_hint_html: 自分に関する情報をどの程度開示するかについての設定項目です。ユーザーはほかのアカウントのフォロー一覧を見て興味のあるアカウントを探したり、キュア！元のアプリ名を見て自分が使いたいアプリの参考にすることがあります。希望に応じて、これらを見られないようにできます。
     reach: つながりやすさ
     reach_hint_html: ほかのユーザーからの見つかりやすさと、フォローされる方法についての設定項目です。「エクスプローラー」やおすすめのユーザーに掲載するか、また新しいフォロワーをどのように受け入れるかをここで変更できます。
     search: 被検索性
-    search_hint_html: 検索での見つかりやすさに関する設定項目です。公開投稿を検索できるようにするかや、Mastodonの外からweb検索でたどり着けるようにするかをここで変更できます。ただし検索エンジンのなかには、この設定に従わずに公開されている情報を利用するものがあるかもしれません。
+    search_hint_html: 検索での見つかりやすさに関する設定項目です。公開キュア！を検索できるようにするかや、Mastodonの外からweb検索でたどり着けるようにするかをここで変更できます。ただし検索エンジンのなかには、この設定に従わずに公開されている情報を利用するものがあるかもしれません。
     title: プライバシーとつながりやすさ
   privacy_policy:
     title: プライバシーポリシー
@@ -1597,11 +1597,11 @@ ja:
   rss:
     content_warning: '閲覧注意:'
     descriptions:
-      account: "@%{acct}からの公開投稿"
-      tag: "#%{hashtag}が付けられた公開投稿"
+      account: "@%{acct}からの公開キュア！"
+      tag: "#%{hashtag}が付けられた公開キュア！"
   scheduled_statuses:
-    over_daily_limit: その日予約できる投稿数 %{limit}を超えています
-    over_total_limit: 予約できる投稿数 %{limit}を超えています
+    over_daily_limit: その日予約できるキュア！数 %{limit}を超えています
+    over_total_limit: 予約できるキュア！数 %{limit}を超えています
     too_soon: より先の時間を指定してください
   self_destruct:
     lead_html: 残念ながら、<strong>%{domain}</strong> は恒久的に閉鎖されます。ここにお持ちだったアカウントを今後使うことはできませんが、これまでのデータのバックアップを要求することはまだ可能です。
@@ -1672,7 +1672,7 @@ ja:
     profile: プロフィール
     relationships: フォロー・フォロワー
     severed_relationships: 途切れたフォロー関係
-    statuses_cleanup: 投稿の自動削除
+    statuses_cleanup: キュア！の自動削除
     strikes: モデレーションストライク
     two_factor_authentication: 二要素認証
     webauthn_authentication: セキュリティキー
@@ -1703,12 +1703,12 @@ ja:
       other: '許可されていないハッシュタグが含まれています: %{tags}'
     edited_at_html: "%{date} 編集済み"
     errors:
-      in_reply_not_found: あなたが返信しようとしている投稿は存在しないようです。
+      in_reply_not_found: あなたが返信しようとしているキュア！は存在しないようです。
     over_character_limit: 上限は%{max}文字です
     pin_errors:
-      direct: 返信したユーザーのみに表示される投稿はピン留めできません
-      limit: 固定できる投稿数の上限に達しました
-      ownership: 他人の投稿を固定することはできません
+      direct: 返信したユーザーのみに表示されるキュア！はピン留めできません
+      limit: 固定できるキュア！数の上限に達しました
+      ownership: 他人のキュア！を固定することはできません
       reblog: ブーストを固定することはできません
     title: '%{name}: "%{quote}"'
     visibilities:
@@ -1720,26 +1720,26 @@ ja:
       unlisted: 非収載
       unlisted_long: 誰でも見ることができますが、公開タイムラインには表示されません
   statuses_cleanup:
-    enabled: 古い投稿を自動的に削除する
-    enabled_hint: 設定した期間を過ぎた投稿は、以下の例外に該当しない限り、自動的に削除されます
+    enabled: 古いキュア！を自動的に削除する
+    enabled_hint: 設定した期間を過ぎたキュア！は、以下の例外に該当しない限り、自動的に削除されます
     exceptions: 例外
-    explanation: 投稿の削除はサーバーに負荷がかかるため、サーバーが混み合っていないときに時間をかけて行われます。
+    explanation: キュア！の削除はサーバーに負荷がかかるため、サーバーが混み合っていないときに時間をかけて行われます。
     ignore_favs: 設定しない
     ignore_reblogs: 設定しない
     interaction_exceptions: インタラクションに基づく例外
-    interaction_exceptions_explanation: お気に入りやブーストの基準値を一度超えてしまった投稿は、基準値を下回った後であっても、削除される保証はありません。
+    interaction_exceptions_explanation: お気に入りやブーストの基準値を一度超えてしまったキュア！は、基準値を下回った後であっても、削除される保証はありません。
     keep_direct: ダイレクトメッセージを保持
     keep_direct_hint: ダイレクトメッセージを削除せずに残します
-    keep_media: メディア付きの投稿を保持
-    keep_media_hint: メディア付きの投稿を削除せずに残します
-    keep_pinned: ピン留めされた投稿を保持
-    keep_pinned_hint: ピン留めされた投稿を削除せずに残します
-    keep_polls: アンケート付きの投稿を保持
-    keep_polls_hint: アンケート付きの投稿を削除せずに残します
-    keep_self_bookmark: ブックマークした投稿を保持
-    keep_self_bookmark_hint: 自分自身でブックマークした投稿を削除せずに残します
-    keep_self_fav: お気に入りに登録した投稿を保持
-    keep_self_fav_hint: 自分自身でお気に入りに登録した投稿を削除せずに残します
+    keep_media: メディア付きのキュア！を保持
+    keep_media_hint: メディア付きのキュア！を削除せずに残します
+    keep_pinned: ピン留めされたキュア！を保持
+    keep_pinned_hint: ピン留めされたキュア！を削除せずに残します
+    keep_polls: アンケート付きのキュア！を保持
+    keep_polls_hint: アンケート付きのキュア！を削除せずに残します
+    keep_self_bookmark: ブックマークしたキュア！を保持
+    keep_self_bookmark_hint: 自分自身でブックマークしたキュア！を削除せずに残します
+    keep_self_fav: お気に入りに登録したキュア！を保持
+    keep_self_fav_hint: 自分自身でお気に入りに登録したキュア！を削除せずに残します
     min_age:
       '1209600': 2週間
       '15778476': 半年
@@ -1749,11 +1749,11 @@ ja:
       '604800': 1週間
       '63113904': 2年
       '7889238': 3ヶ月
-    min_age_label: 投稿を保持する期間
+    min_age_label: キュア！を保持する期間
     min_favs: お気に入りの基準値
-    min_favs_hint: この数以上、お気に入り登録された投稿を削除せずに残します。空白にしておくと、お気に入りの数に関わらず投稿を削除します。
+    min_favs_hint: この数以上、お気に入り登録されたキュア！を削除せずに残します。空白にしておくと、お気に入りの数に関わらずキュア！を削除します。
     min_reblogs: ブーストの基準値
-    min_reblogs_hint: この数以上、ブーストされた投稿を削除せずに残します。空白にしておくと、ブーストされた数に関わらず投稿を削除します。
+    min_reblogs_hint: この数以上、ブーストされたキュア！を削除せずに残します。空白にしておくと、ブーストされた数に関わらずキュア！を削除します。
   stream_entries:
     sensitive_content: 閲覧注意
   strikes:
@@ -1832,26 +1832,26 @@ ja:
         spam: スパム
         violation: コンテンツは以下のコミュニティガイドラインに違反しています
       explanation:
-        delete_statuses: あなたの投稿のいくつかは、1つ以上のコミュニティガイドラインに違反していることが判明し、%{instance}のモデレータによって削除されました。
+        delete_statuses: あなたのキュア！のいくつかは、1つ以上のコミュニティガイドラインに違反していることが判明し、%{instance}のモデレータによって削除されました。
         disable: アカウントは使用できませんが、プロフィールやその他のデータはそのまま残ります。 データのバックアップをリクエストしたり、アカウント設定を変更したり、アカウントを削除したりできます。
-        mark_statuses_as_sensitive: あなたのいくつかの投稿は、%{instance}のモデレータによって閲覧注意としてマークされています。これは、プレビューが表示される前にユーザが投稿内のメディアをタップする必要があることを意味します。あなたは将来投稿する際に自分自身でメディアを閲覧注意としてマークすることができます。
+        mark_statuses_as_sensitive: あなたのいくつかのキュア！は、%{instance}のモデレータによって閲覧注意としてマークされています。これは、プレビューが表示される前にユーザがキュア！内のメディアをタップする必要があることを意味します。あなたは将来キュア！する際に自分自身でメディアを閲覧注意としてマークすることができます。
         sensitive: 今後、アップロードされたすべてのメディアファイルは閲覧注意としてマークされ、クリック解除式の警告で覆われるようになります。
-        silence: アカウントが制限されています。このサーバーでは既にフォローしている人だけがあなたの投稿を見ることができます。 様々な発見機能から除外されるかもしれません。他の人があなたを手動でフォローすることは可能です。
+        silence: アカウントが制限されています。このサーバーでは既にフォローしている人だけがあなたのキュア！を見ることができます。 様々な発見機能から除外されるかもしれません。他の人があなたを手動でフォローすることは可能です。
         suspend: アカウントは使用できなくなり、プロフィールなどのデータにもアクセスできなくなります。約30日後にデータが完全に削除されるまでは、ログインしてデータのバックアップを要求することができますが、アカウントの停止回避を防ぐために一部の基本データを保持します。
       reason: '理由:'
-      statuses: '投稿:'
+      statuses: 'キュア！:'
       subject:
-        delete_statuses: "%{acct}さんの投稿が削除されました"
+        delete_statuses: "%{acct}さんのキュア！が削除されました"
         disable: あなたのアカウント %{acct}は凍結されました
-        mark_statuses_as_sensitive: あなたの%{acct}の投稿は閲覧注意としてマークされました
+        mark_statuses_as_sensitive: あなたの%{acct}のキュア！は閲覧注意としてマークされました
         none: "%{acct}に対する警告"
-        sensitive: あなたの%{acct}の投稿はこれから閲覧注意としてマークされます
+        sensitive: あなたの%{acct}のキュア！はこれから閲覧注意としてマークされます
         silence: あなたのアカウント %{acct}はサイレンスにされました
         suspend: あなたのアカウント %{acct}は停止されました
       title:
-        delete_statuses: 投稿が削除されました
+        delete_statuses: キュア！が削除されました
         disable: アカウントが凍結されました
-        mark_statuses_as_sensitive: 閲覧注意としてマークされた投稿
+        mark_statuses_as_sensitive: 閲覧注意としてマークされたキュア！
         none: 警告
         sensitive: 閲覧注意としてマークされたアカウント
         silence: アカウントがサイレンスにされました
@@ -1870,9 +1870,9 @@ ja:
       feature_action: もっと詳しく
       feature_audience: Mastodonでは、誰の仲介もなく、あなた自身でオーディエンスの管理を行うことができます。あなたのインフラストラクチャー上にデプロイされたMastodon上でも、ほかのどんなMastodonサーバーのアカウントをフォローすることも、フォローされることもでき、それらはもちろんあなた自身で制御できます。
       feature_audience_title: 自信を持ってオーディエンスを構築
-      feature_control: ホームフィードで見たいものは、あなたが一番よく知っています。時間を無駄にするアルゴリズムや広告はありません。ひとつのアカウントからすべてのMastodonサーバーの投稿を時系列で受け取り、インターネットの隅っこをもう少しあなたらしくしましょう。
+      feature_control: ホームフィードで見たいものは、あなたが一番よく知っています。時間を無駄にするアルゴリズムや広告はありません。ひとつのアカウントからすべてのMastodonサーバーのキュア！を時系列で受け取り、インターネットの隅っこをもう少しあなたらしくしましょう。
       feature_control_title: 自分のタイムラインを管理
-      feature_creativity: Mastodonでは、自己表現を多様にするため、音声・動画・画像の投稿や、アクセシビリティ用説明、投票・コンテンツ警告・動くアバター・カスタム絵文字・サムネイル切り抜き設定などをサポートしています。アートや音楽、ポッドキャストを投稿したいあなたにもMastodonはピッタリです。
+      feature_creativity: Mastodonでは、自己表現を多様にするため、音声・動画・画像のキュア！や、アクセシビリティ用説明、投票・コンテンツ警告・動くアバター・カスタム絵文字・サムネイル切り抜き設定などをサポートしています。アートや音楽、ポッドキャストをキュア！したいあなたにもMastodonはピッタリです。
       feature_creativity_title: 比類なきクリエイティビティ
       feature_moderation: Mastodonでは意思決定はあなたの手にあります。それぞれのサーバーで適用されるルールや規則を策定できます。これらは、企業運営のソーシャルメディアとは違いサーバー単位でローカルに適用されるため、さまざまなグループのニーズに最も柔軟に対応することができるのです。
       feature_moderation_title: サーバー運営をあるべき姿で
@@ -1889,7 +1889,7 @@ ja:
       hashtags_view_more: トレンドのハッシュタグをもっと見る
       post_action: 作成
       post_step: 試しになにか書いてみましょう。写真、ビデオ、アンケートなど、なんでも大丈夫です.
-      post_title: はじめての投稿
+      post_title: はじめてのキュア！
       share_action: 共有
       share_step: Mastodon アカウントをほかの人に紹介しましょう。
       share_title: プロフィールをシェアする

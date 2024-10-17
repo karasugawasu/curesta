@@ -1,0 +1,62 @@
+// Dependent colors
+$black: #000000;
+$white: #ffffff;
+
+$classic-base-color: #0f500f;
+$classic-primary-color: #9bbe9b;
+$classic-secondary-color: #d7e6d7;
+$classic-highlight-color: #1ea51e;
+
+$blurple-600: #208e20; // Iris
+$blurple-500: #25a325; // Brand purple
+$blurple-400: #2ab82a;
+$blurple-300: #007700; // Faded Blue
+$grey-600: #4e4c5a; // Trout
+$grey-100: #dadaf3; // Topaz
+
+// Differences
+$success-green: #3c754d;
+
+$base-overlay-background: $white !default;
+$valid-value-color: $success-green !default;
+
+$ui-base-color: $classic-secondary-color !default;
+$ui-base-lighter-color: #afdcaf;
+$ui-primary-color: #99e899;
+$ui-secondary-color: $classic-base-color !default;
+$ui-highlight-color: #239b23;
+
+$ui-button-color: $white !default;
+$ui-button-background-color: $blurple-500 !default;
+$ui-button-focus-background-color: $blurple-600 !default;
+
+$ui-button-secondary-color: $grey-100 !default;
+$ui-button-secondary-border-color: $grey-100 !default;
+$ui-button-secondary-focus-background-color: $grey-600 !default;
+$ui-button-secondary-focus-color: $white !default;
+
+$ui-button-tertiary-color: $blurple-300 !default;
+$ui-button-tertiary-border-color: $blurple-300 !default;
+$ui-button-tertiary-focus-background-color: $blurple-600 !default;
+$ui-button-tertiary-focus-color: $white !default;
+
+$primary-text-color: $black !default;
+$darker-text-color: $classic-base-color !default;
+$dark-text-color: #0f4b0f;
+$action-button-color: #466446;
+
+$inverted-text-color: $black !default;
+$lighter-text-color: $classic-base-color !default;
+$light-text-color: #274f34;
+
+// Newly added colors
+$account-background-color: $white !default;
+
+// Invert darkened and lightened colors
+@function darken($color, $amount) {
+  @return hsl(hue($color), saturation($color), lightness($color) + $amount);
+}
+
+@function lighten($color, $amount) {
+  @return hsl(hue($color), saturation($color), lightness($color) - $amount);
+}

@@ -1,0 +1,88 @@
+@use 'sass:color';
+
+// Dependent colors
+$black: #000000;
+$white: #ffffff;
+
+$classic-base-color: hsl(307deg, 32%, 55%);
+$classic-primary-color: hsl(307deg, 21%, 68%);
+$classic-secondary-color: hsl(307deg, 23%, 87%);
+$classic-highlight-color: hsl(307deg, 69%, 38%);
+
+$blurple-600: hsl(307deg, 35%, 40%); // Iris
+$blurple-500: hsl(307deg, 35%, 45%); // Brand purple
+$blurple-400: hsl(307deg, 35%, 50%);
+$blurple-300: hsl(307deg, 100%, 23%); // Faded Blue
+$grey-600: hsl(307deg, 8%, 33%); // Trout
+$grey-100: hsl(307deg, 51%, 90%); // Topaz
+
+// Differences
+$success-green: lighten(hsl(138deg, 32%, 35%), 8%);
+
+$base-overlay-background: $white !default;
+$valid-value-color: $success-green !default;
+
+$ui-base-color: $classic-secondary-color !default;
+$ui-base-lighter-color: hsl(307deg, 24%, 75%);
+$ui-primary-color: $classic-primary-color !default;
+$ui-secondary-color: $classic-base-color !default;
+$ui-highlight-color: $classic-highlight-color !default;
+
+$ui-button-color: $white !default;
+$ui-button-background-color: $blurple-500 !default;
+$ui-button-focus-background-color: $blurple-600 !default;
+$ui-button-focus-outline-color: $blurple-400 !default;
+$ui-button-focus-outline: solid 2px $ui-button-focus-outline-color !default;
+
+$ui-button-secondary-color: $grey-600 !default;
+$ui-button-secondary-border-color: $grey-600 !default;
+$ui-button-secondary-focus-color: $white !default;
+
+$ui-button-tertiary-color: $blurple-300 !default;
+$ui-button-tertiary-border-color: $blurple-300 !default;
+$ui-button-tertiary-focus-background-color: $blurple-600 !default;
+$ui-button-tertiary-focus-color: $white !default;
+
+$primary-text-color: $black !default;
+$darker-text-color: $classic-base-color !default;
+$highlight-text-color: $ui-highlight-color !default;
+$dark-text-color: hsl(307deg, 16%, 32%);
+$action-button-color: hsl(307deg, 38%, 36%);
+
+$inverted-text-color: $black !default;
+$lighter-text-color: $classic-base-color !default;
+$light-text-color: hsl(307deg, 16%, 32%);
+
+// Newly added colors
+$account-background-color: $white !default;
+
+// Invert darkened and lightened colors
+@function darken($color, $amount) {
+  @return hsl(
+    hue($color),
+    color.channel($color, 'saturation', $space: hsl),
+    color.channel($color, 'lightness', $space: hsl) + $amount
+  );
+}
+
+@function lighten($color, $amount) {
+  @return hsl(
+    hue($color),
+    color.channel($color, 'saturation', $space: hsl),
+    color.channel($color, 'lightness', $space: hsl) - $amount
+  );
+}
+
+$emojis-requiring-inversion: 'chains';
+
+body {
+  --dropdown-border-color: hsl(120deg, 25%, 88%);
+  --dropdown-background-color: #fff;
+  --modal-border-color: hsl(120deg, 25%, 88%);
+  --modal-background-color: var(--background-color-tint);
+  --background-border-color: hsl(120deg, 25%, 88%);
+  --background-color: #fff;
+  --background-color-tint: rgba(255, 255, 255, 80%);
+  --background-filter: blur(10px);
+  --on-surface-color: #{transparentize($ui-base-color, 0.65)};
+}

@@ -1,0 +1,26 @@
+@font-face {
+  font-family: Juliamo;
+  src: url('../fonts/juliamo/juliamo.woff') format('woff');
+}
+
+body {
+  font-family: Juliamo, mastodon-font-sans-serif, sans-serif;
+}
+
+.column-header__title {
+  color: hsl(11deg, 77%, 35%);
+}
+
+.column-link {
+  &:hover {
+    color: $ui-button-focus-background-color;
+  }
+}
+
+.admin-wrapper .sidebar ul a:hover {
+  color: $ui-button-focus-background-color;
+}
+
+.drawer__header a:hover {
+  color: $ui-button-focus-background-color;
+}

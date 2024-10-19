@@ -1767,9 +1767,10 @@ ja:
     mastodon-light: Mastodon (ライト)
     system: 自動 (システムのテーマを使用)
     juliamo-mastodon-light: Mastodon (ライト)ユリアーモ
-    cure-orange: キュアオレンジ
-    cure-lime: キュアライム
+    cure-mikan: キュアみかん
+    cure-yuzuha: キュアゆずは
     cure-ayame: キュアあやめ
+    cure-kureha: キュアくれは
   time:
     formats:
       default: "%Y年%m月%d日 %H:%M"

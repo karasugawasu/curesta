@@ -4,17 +4,17 @@
 $black: #000000;
 $white: #ffffff;
 
-$classic-base-color: darken(hsl(307deg, 32%, 55%), 25%);
-$classic-primary-color: hsl(307deg, 32%, 55%);
-$classic-secondary-color: hsl(307deg, 25%, 88%);
-$classic-highlight-color: darken(hsl(307deg, 32%, 55%), 10%);
+$classic-base-color: darken(hsl(11deg, 77%, 50%), 15%);
+$classic-primary-color: hsl(11deg, 77%, 50%);
+$classic-secondary-color: hsl(11deg, 42%, 86%);
+$classic-highlight-color: darken(hsl(11deg, 77%, 50%), 10%);
 
-$blurple-600: hsl(307deg, 32%, 55%); // Iris
+$blurple-600: hsl(11deg, 77%, 50%); // Iris
 $blurple-500: lighten($blurple-600, 7%); // Brand purple
 $blurple-400: lighten($blurple-600, 14%);
 $blurple-300: lighten($blurple-600, 21%); // Faded Blue
-$grey-600: hsl(307deg, 8%, 33%); // Trout
-$grey-100: hsl(307deg, 51%, 90%); // Topaz
+$grey-600: hsl(6deg, 8%, 33%); // Trout
+$grey-100: hsl(6deg, 51%, 90%); // Topaz
 
 // Differences
 $success-green: lighten(hsl(138deg, 32%, 35%), 8%);
@@ -23,7 +23,7 @@ $base-overlay-background: $white !default;
 $valid-value-color: $success-green !default;
 
 $ui-base-color: $classic-secondary-color !default;
-$ui-base-lighter-color: hsl(307deg, 24%, 75%);
+$ui-base-lighter-color: hsl(11deg, 24%, 75%);
 $ui-primary-color: $classic-primary-color !default;
 $ui-secondary-color: $classic-base-color !default;
 $ui-highlight-color: $classic-highlight-color !default;
@@ -46,12 +46,12 @@ $ui-button-tertiary-focus-color: $white !default;
 $primary-text-color: $black !default;
 $darker-text-color: $classic-base-color !default;
 $highlight-text-color: $ui-highlight-color !default;
-$dark-text-color: darken($classic-base-color, 15%);
-$action-button-color: $classic-base-color;
+$dark-text-color: hsl(11deg, 16%, 32%);
+$action-button-color: hsl(11deg, 38%, 36%);
 
 $inverted-text-color: $black !default;
 $lighter-text-color: $classic-base-color !default;
-$light-text-color: lighten($classic-base-color, 15%);
+$light-text-color: hsl(6deg, 16%, 32%);
 
 // Newly added colors
 $account-background-color: $white !default;
@@ -76,11 +76,11 @@ $account-background-color: $white !default;
 $emojis-requiring-inversion: 'chains';
 
 body {
-  --dropdown-border-color: hsl(307deg, 25%, 88%);
+  --dropdown-border-color: hsl(6deg, 25%, 88%);
   --dropdown-background-color: #fff;
-  --modal-border-color: hsl(307deg, 25%, 88%);
+  --modal-border-color: hsl(6deg, 25%, 88%);
   --modal-background-color: var(--background-color-tint);
-  --background-border-color: hsl(307deg, 25%, 88%);
+  --background-border-color: hsl(6deg, 25%, 88%);
   --background-color-tint: rgba(255, 255, 255, 80%);
   --background-filter: blur(10px);
   --on-surface-color: #{transparentize($ui-base-color, 0.65)};

@@ -863,7 +863,7 @@ he:
       status_changed: הודעה שונתה
       title: הודעות החשבון
       trending: נושאים חמים
-      visibility: נראות
+      visibility: חשיפה
       with_media: עם מדיה
     strikes:
       actions:
@@ -1636,7 +1636,7 @@ he:
       too_many_options: לא יכול להכיל יותר מ-%{max} פריטים
   preferences:
     other: שונות
-    posting_defaults: ברירות מחדל להודעות
+    posting_defaults: ברירות מחדל בפרסום
     public_timelines: פידים פומביים
   privacy:
     hint_html: "<strong>ניתן להתאים את הצורה שבה תירצו שיראו את פרופיל המשתמש וההודעות שלכם.</strong> מגוון אפשרויות במסטודון יכולות לעזור לכם להיחשף לקהל רחב יותר כאשר תפעילו אותן. הקדישו רגע לבדוק את ההגדרות הללו כדי לוודא שהן מתאימות לכם."
@@ -1803,7 +1803,7 @@ he:
       two: 'מכיל את התגיות האסורות: %{tags}'
     edited_at_html: נערך ב-%{date}
     errors:
-      in_reply_not_found: נראה שההודעה שאת/ה מנסה להגיב לה לא קיימת.
+      in_reply_not_found: נראה שההודעה שנסית להגיב לה לא קיימת.
     over_character_limit: חריגה מגבול התווים של %{max}
     pin_errors:
       direct: לא ניתן לקבע הודעות שנראותן מוגבלת למכותבים בלבד

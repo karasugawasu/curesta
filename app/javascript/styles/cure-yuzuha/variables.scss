@@ -53,11 +53,11 @@ $grey-100: hsl(240deg, 51%, 90%); // Topaz
   $primary-text-color: $black,
   $darker-text-color: $classic-base-color,
   $highlight-text-color: $classic-highlight-color,
-  $dark-text-color: darken($classic-base-color, 15%),
+  $dark-text-color: color.adjust($classic-base-color, $lightness: -15%),
   $action-button-color: $classic-base-color,
 
   $inverted-text-color: $black,
   $lighter-text-color: $classic-base-color,
-  $light-text-color: lighten($classic-base-color, 15%),
+  $light-text-color: color.adjust($classic-base-color, $lightness: 15%),
   $emojis-requiring-inversion: 'chains'
 );

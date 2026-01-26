@@ -1923,6 +1923,9 @@ ja:
     contrast: Mastodon (ハイコントラスト)
     default: Mastodon (ダーク)
     mastodon-light: Mastodon (ライト)
+    cure-mikan: キュアみかん (ライト)
+    cure-kureha: キュアくれは (ライト)
+    cure-yuzuha: キュアゆずは (ライト)
     system: 自動 (システムのテーマを使用)
   time:
     formats:

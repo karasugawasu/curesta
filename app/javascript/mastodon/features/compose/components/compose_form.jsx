@@ -263,9 +263,9 @@ class ComposeForm extends ImmutablePureComponent {
     // 反映を跨いでから送信（安全側）
     Promise.resolve().then(() => {
       this.handleSubmit();
-    }).finally(() => {
-      // 「今回だけ切替」なら戻す。維持したいなら消す
-      this.props.onChangeVisibility(prev);
+    // }).finally(() => {
+    //   // 「今回だけ切替」なら戻す。維持したいなら消す
+    //   this.props.onChangeVisibility(prev);
     });
   };
 

@@ -32,6 +32,10 @@ import { Warning } from './warning';
 import { ComposeQuotedStatus } from './quoted_post';
 import { VisibilityButton } from './visibility_button';
 
+import { Icon } from '@/mastodon/components/icon';
+import LockIcon from '@/material-icons/400-24px/lock.svg?react';
+import QuietTimeIcon from '@/material-icons/400-24px/quiet_time.svg?react';
+
 const allowedAroundShortCode = '><\u0085\u0020\u00a0\u1680\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200a\u202f\u205f\u3000\u2028\u2029\u0009\u000a\u000b\u000c\u000d';
 
 const messages = defineMessages({
@@ -74,6 +78,7 @@ class ComposeForm extends ImmutablePureComponent {
     lang: PropTypes.string,
     maxChars: PropTypes.number,
     redirectOnSuccess: PropTypes.bool,
+    onChangeVisibility: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
@@ -248,6 +253,22 @@ class ComposeForm extends ImmutablePureComponent {
     this.props.onPickEmoji(position, data, needsSpace);
   };
 
+  submitWithVisibility = (visibility) => {
+    if (!this.canSubmit()) return;
+
+    const prev = this.props.privacy; // stateのキーはprivacy
+
+    this.props.onChangeVisibility(visibility);
+
+    // 反映を跨いでから送信（安全側）
+    Promise.resolve().then(() => {
+      this.handleSubmit();
+    }).finally(() => {
+      // 「今回だけ切替」なら戻す。維持したいなら消す
+      this.props.onChangeVisibility(prev);
+    });
+  };
+
   render () {
     const { intl, onPaste, autoFocus, withoutNavigation, maxChars, isSubmitting } = this.props;
     const { highlighted } = this.state;
@@ -325,6 +346,24 @@ class ComposeForm extends ImmutablePureComponent {
               </div>
 
               <div className='compose-form__submit'>
+                <Button
+                  type='button'
+                  compact
+                  disabled={!this.canSubmit()}
+                  loading={isSubmitting}
+                  onClick={() => this.submitWithVisibility('private')}
+                >
+                  <Icon id='lock' icon={LockIcon} />
+                </Button>
+                <Button
+                  type='button'
+                  compact
+                  disabled={!this.canSubmit()}
+                  loading={isSubmitting}
+                  onClick={() => this.submitWithVisibility('unlisted')}
+                >
+                  <Icon id='unlock' icon={QuietTimeIcon} />
+                </Button>
                 <Button
                   type='submit'
                   compact

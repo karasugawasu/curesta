@@ -1,0 +1,28 @@
+.compose-form__submit {
+  display: flex;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.compose-form__submit .button {
+  height: 32px;
+  min-height: 24px;
+  padding: 0 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.compose-submit-icon {
+  width: 40px;
+  padding: 0;
+}
+
+.compose-submit-icon .icon {
+  width: 20px;
+  height: 20px;
+}
+
+.compose-form__actions {
+  align-items: flex-end;
+}

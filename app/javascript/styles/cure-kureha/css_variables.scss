@@ -13,7 +13,7 @@ body {
   --background-filter: blur(10px);
   --on-surface-color: #{color.adjust($ui-base-color, $alpha: -0.65)};
   --background-color: #fff;
-  --surface-variant-background-color: #f1ebfb;
+  --surface-variant-background-color: hsl(11deg 47.1% 90.44%);
   --surface-border-color: #cac4d0;
   --rich-text-container-color: rgba(255, 216, 231, 100%);
   --rich-text-text-color: rgba(114, 47, 83, 100%);

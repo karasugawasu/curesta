@@ -4,7 +4,7 @@
 @use '../mastodon/functions' as *;
 
 body {
-  --dropdown-border-color: hsl(240deg, 25%, 88%);
+  --dropdown-border-color: hsl(34deg, 25%, 88%);
   --dropdown-background-color: #fff;
   --modal-border-color: hsl(34deg, 25%, 88%);
   --modal-background-color: #fff;
@@ -12,8 +12,8 @@ body {
   --background-color: #fff;
   --background-color-tint: rgba(255, 255, 255, 80%);
   --background-filter: blur(10px);
-  --surface-variant-background-color: #f1ebfb;
-  --surface-border-color: #cac4d0;
+  --surface-variant-background-color: hsl(31deg, 57%, 91%);
+  --surface-border-color: hsl(34deg, 25%, 88%);
   --on-surface-color: #{color.adjust($ui-base-color, $alpha: -0.65)};
   --rich-text-container-color: rgba(255, 216, 231, 100%);
   --rich-text-text-color: rgba(114, 47, 83, 100%);
